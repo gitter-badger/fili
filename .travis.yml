@@ -7,9 +7,16 @@
   cache:
     directories:
       - "~/.m2"
+#    env:
+#      global:
+#        - secure: [TODO]
+#        - secure: [TODO]
   branches:
     only:
       - master
   # build steps
   install: true
   script: mvn clean verify
+#  after_success:
+#    - test "${TRAVIS_PULL_REQUEST}" == "false" && mvn versioneye:update
+#    - test "${TRAVIS_PULL_REQUEST}" == "false" && test "${TRAVIS_TAG}" != "" && mvn deploy --settings travis/settings.xml
